@@ -1,0 +1,18 @@
+{
+  "name": "boilermaker",
+  "version": "1.0.0",
+  "description": "Getting your applications off the ground!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "start:dev": "webpack -w & nodemon index.js -e js,html --watch",
+    "seed": "node seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hokevins"
+  },
+  "author": "Kevin Ho",
+  "license": "ISC"
+}
