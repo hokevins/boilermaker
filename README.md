@@ -36,4 +36,4 @@ Any OAuth external API clientID's & clientSecrets must be updated via `server/au
 
 ----------
 
-THANKS FOR PLAYING!
+THANKS FOR PLAYING! hadoken.
