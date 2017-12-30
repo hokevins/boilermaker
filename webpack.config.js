@@ -14,7 +14,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /jsx?$/,
+        test: /\.jsx?$/,
         include: [
           path.resolve(__dirname, 'client')
         ],
@@ -23,6 +23,13 @@ module.exports = {
         options: {
           presets: ['react', 'env', 'stage-2'] // if you aren't using 'babel-preset-env', then omit the 'env'
         }
+      },
+      {
+        test: /\.css$/, // use the style-loader/css-loader combos for anything matching the .css extension
+        use: [
+          'style-loader',
+          'css-loader',
+        ]
       }
     ]
   }

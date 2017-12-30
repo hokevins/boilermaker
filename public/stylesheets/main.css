@@ -1,11 +1,9 @@
+/*Alternatively, see '../../client/index.css' for other styling options.*/
+
 .root-container {
   color: orange;
 }
 
 .home-container {
   color: purple;
-}
-
-.users-list {
-  color: green;
 }
