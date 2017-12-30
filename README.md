@@ -24,7 +24,7 @@ You could install them on a project-by-project basis, or install them globally u
 
 ----------
 
-# Basic Server
+# CSS Styling
 
 You may wish to style your app with either the `main.css` file as specified inside the index.html inside of the public folder, OR you may also use the `index.css` file using the same entry point as webpack's JavaScript through style-loader and css-loader.
 
