@@ -2,8 +2,6 @@
 
 After forking or cloning, don't forget to `npm install`.
 
-Any OAuth external API clientID's & clientSecrets must also be updated via `server/auth/keys.js`.
-
 If applicable, once you've ensured that `postgres` is running (e.g. by trying to start a `psql` shell), you can execute `npm run seed` to seed the database with fake data (assuming you've populated the seed.js file).
 
 Otherwise, don't forget to *`createdb {dbName}`*.
@@ -29,6 +27,12 @@ You could install them on a project-by-project basis, or install them globally u
 You may wish to style your app with either the `main.css` file as specified inside the index.html inside of the public folder, OR you may also use the `index.css` file using the same entry point as webpack's JavaScript through style-loader and css-loader.
 
 Use it as an index for other css files that you @import in.
+
+----------
+
+# Authentication & OAuth2.0
+
+Any OAuth external API clientID's & clientSecrets must be updated via `server/auth/keys.js` (which has been added to `.gitignore` for safe-keeping on your local IDE.
 
 ----------
 
