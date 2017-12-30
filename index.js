@@ -1,5 +1,5 @@
 const app = require('./server');
-const PORT = process.env.PORT || 1337;
+const PORT = process.env.PORT || 1337; // this can be very useful if you deploy to Heroku!
 const { db } = require('./server/db/models');
 
 

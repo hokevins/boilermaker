@@ -26,9 +26,7 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
-  req.requestedUser.reload(User.options.scopes.populated())
-    .then(requestedUser => res.json(requestedUser))
-    .catch(next);
+  res.json(req.requestedUser);
 });
 
 router.put('/:id', (req, res, next) => {

@@ -6,9 +6,9 @@ const path = require('path');
 const app = express();
 
 /* "Enhancing" middleware (does not send response, server-side effects only) */
-app.use(morgan);
+app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 /* "Responding" middleware (may send a response back to client) */
 app.use('/auth', require('./auth'));
@@ -23,8 +23,8 @@ app.use(express.static(path.join(__dirname, '../node_modules')));
 app.use('/auth', require('./auth'));
 app.use('/api', require('./api'));
 
-// Any middleware to serve up 404s should go here
-
+// send index.html for any route that doesn't match any API routes
+// make sure this comes after all of your routes in your server entry file
 const validFrontendRoutes = ['*', '/', '/users', '/users/:id', '/signup', '/login'];
 const indexPath = path.join(__dirname, '../public/index.html');
 validFrontendRoutes.forEach(stateRoute => {
@@ -34,6 +34,7 @@ validFrontendRoutes.forEach(stateRoute => {
 });
 
 app.use((err, req, res, next) => {
+  // console.error(err); // need this still too?
   console.error(err.stack);
   res.status(err.status || 500).send(err.message || 'Internal Error');
 });
