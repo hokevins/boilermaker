@@ -41,7 +41,7 @@ export const logout = history => dispatch => {
     .catch(err => console.error('Logging out was unsuccesful', err));
 };
 
-export const signup = credentials => dispatch => {
+export const signup = (credentials, history) => dispatch => {
   axios.post('/auth/local/signup', credentials)
     .then(res => setUserAndRedirect(res.data, history, dispatch))
     .catch(err => console.error(`Signing up with ${credentials.email} and ${credentials.password} was unsuccesful`, err));

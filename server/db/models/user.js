@@ -20,9 +20,7 @@ const User = db.define('user', {
     unique: true
   },
   password: Sequelize.STRING, // make sure that the password we store is salted and hashed! NEVER store the plain password
-  salt: {
-    type: Sequelize.STRING
-  },
+  salt: Sequelize.STRING,
   isAdmin: {
     type: Sequelize.BOOLEAN,
     defaultValue: false
@@ -31,23 +29,23 @@ const User = db.define('user', {
 });
 
 // INSTANCE METHODS
-User.prototype.correctPassword = (candidatePassword) => {
+User.prototype.correctPassword = function (candidatePassword) {
   // should return true or false for if the entered password matches
-  return this.Model.encryptPassword(candidatePassword, this.salt) === this.password;
+  return User.encryptPassword(candidatePassword, this.salt) === this.password;
 };
 
-User.prototype.sanitize = () => {
+User.prototype.sanitize = function () {
   // helpful method to make sure you don't send any more information than needed down to the client
   return _.omit(this.toJSON(), ['password', 'salt']);
 };
 
 // CLASS METHODS
-User.generateSalt = () => {
+User.generateSalt = function () {
   // this should generate our random salt
   return crypto.randomBytes(16).toString('base64');
 };
 
-User.encryptPassword = (plainText, salt) => {
+User.encryptPassword = function (plainText, salt) {
   // accepts a plain text password and a salt, and returns its hash
   const hash = crypto.createHash('sha1');
   hash.update(plainText);
