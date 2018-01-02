@@ -15,13 +15,19 @@ class Home extends Component {
     return (
       <div className="home-container">
         <h2>Welcome to Boilermaker!</h2>
-        <h4>Sample mapped users' emails from react-redux store below:</h4>
+        <h4>Sample mapped users' emails/passwords from react-redux store below:</h4>
         <ul className="users-list">
           {
             this.props.users.map(user => {
               return (
                 <li key={user.id}>
-                  {user.email}
+                  email:  {user.email}
+                    <div>
+                      password:  {user.password}
+                    </div>
+                    <div>
+                      salt:  {user.salt}
+                    </div>
                 </li>
               );
             })

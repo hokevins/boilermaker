@@ -54,8 +54,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
 
 /* "Responding" middleware (may send a response back to client) */
-app.use('/auth', require('./auth'));
 app.use('/api', require('./api'));
+app.use('/auth', require('./auth'));
 // send index.html for any route that doesn't match any API routes
 // make sure this comes after all of your routes in your server entry file
 const validFrontendRoutes = ['*', '/', '/users', '/users/:id', '/signup', '/login'];
@@ -70,7 +70,7 @@ validFrontendRoutes.forEach(stateRoute => {
 app.use((err, req, res, next) => {
   // console.error(err); // need this still too?
   console.error(err.stack);
-  res.status(err.status || 500).send(err.message || 'Internal Error');
+  res.status(err.status || 500).send(err.message || 'Internal error');
 });
 
 module.exports = app;

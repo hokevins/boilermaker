@@ -7,6 +7,7 @@ import Home from './Home';
 
 // IMPORT FETCH REDUCER FUNCTIONS HERE:
 import { fetchUsers } from '../redux/users';
+import { fetchCurrentUser } from '../redux/auth';
 
 /* -----------------    COMPONENT     ------------------ */
 
@@ -38,6 +39,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchInitialData: () => {
       dispatch(fetchUsers());
+      dispatch(fetchCurrentUser());
     }
   };
 };
