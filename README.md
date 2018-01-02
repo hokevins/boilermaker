@@ -41,11 +41,11 @@ Had to downgrade to pg@6.4.2 in order to avoid OAuth type error.
 
 # Future to-do's:
 
--- See workshop:  Environment Variables
--- `process.env.NODE_ENV === 'development'` inside of `index.js`.
--- `process.env.GOOGLE_CLIENT_ID = 'etc';`
--- `process.env.GOOGLE_CLIENT_SECRET = 'etc';`
-And in your app's entry point, `index.js`:
+- See workshop:  Environment Variables
+- `process.env.NODE_ENV === 'development'` inside of `index.js`.
+- `process.env.GOOGLE_CLIENT_ID = 'etc';`
+- `process.env.GOOGLE_CLIENT_SECRET = 'etc';`
+- And in your app's entry point, `index.js`:
 `require('./localSecrets');` // mutate the process.env object with your variables
 `require('./server');`       // run your app after you're sure the env variables are set.
 
