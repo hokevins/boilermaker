@@ -59,13 +59,13 @@ Note that you may need to install an additional dev dependency: react-addons-tes
 
 These libraries are the bare minimum we need to get off the ground with your testing. However, here's a list of some other handy libraries that may come in handy:
 
-sinon - provides spies, stubs and mocks
-chai-as-promised - extends chai with assertions specific to promises
-chai-things - extends chai with helpful assertions specific to arrays
-sinon-as-promised - extends sinon with sugar for promises
-chai-enzyme - extends chai with some convenience functions for working with enzyme
+- sinon -> provides spies, stubs and mocks
+- chai-as-promised -> extends chai with assertions specific to promises
+- chai-things -> extends chai with helpful assertions specific to arrays
+- sinon-as-promised -> extends sinon with sugar for promises
+- chai-enzyme -> extends chai with some convenience functions for working with enzyme
 
-N.B: in particular, chai supports a wide ecosystem of extensions. If you find yourself writing verbose code in order to make a particular assertion, take a moment and see if someone's written a plugin that could make your life easier. Here's a full list of them. (http://chaijs.com/plugins/)
+N.B: In particular, chai supports a wide ecosystem of extensions. If you find yourself writing verbose code in order to make a particular assertion, take a moment and see if someone's written a plugin that could make your life easier. Here's a full list of them. (http://chaijs.com/plugins/)
 
 ----------
 
