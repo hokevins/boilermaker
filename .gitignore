@@ -26,4 +26,4 @@ Thumbs.db
 .svn
 
 # OAuth external API clientID's & clientSecrets
-server/auth/keys.js
+server/auth/localSecrets.js

@@ -98,6 +98,13 @@ class Home extends Component {
           </div>
           <button type="submit">SIGNUP</button>
         </form>
+        <p>
+          <a
+            href="/auth/google"
+            className="btn btn-social btn-google">
+            <span>LOGIN with Google</span>
+          </a>
+        </p>
       </div>
     );
   }

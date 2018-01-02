@@ -9,8 +9,10 @@ const { User } = require('../db/models');
 
 const googleCredentials = {
   // options for the google strategy
-  clientID: require('./keys.js').google.clientID,
-  clientSecret: require('./keys.js').google.clientSecret,
+  clientID: require('./localSecrets.js').google.clientID,
+  clientSecret: require('./localSecrets.js').google.clientSecret,
+  // clientID: process.env.GOOGLE_CLIENT_ID,
+  // clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: '/auth/google/callback'
 };
 
@@ -57,9 +59,9 @@ router.get('/', passport.authenticate('google', { scope: 'email' }));
    // `http://localhost:1337/auth/google/callback` - set in Google's API console dashboard
 // handle the callback after Google has authenticated the user and Google's 'query code' to exchange for profile information to fire strategy's argument callback function
 router.get('/callback',
-  passport.authenticate('google', { failureRedirect: '/login' }),
+  passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => { // a successRedirect is fine, but with this we can use `req` for a more meaningful redirect
-    res.redirect(`/users/${req.user.id}`);
+    res.redirect('/');
   }
 );
 

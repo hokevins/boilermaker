@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { create as createUser } from './users';
+
 /* -----------------    ACTION TYPES    ------------------ */
 
 const SET_CURRENT_USER = 'SET_CURRENT_USER';
@@ -43,7 +45,10 @@ export const logout = history => dispatch => {
 
 export const signup = (credentials, history) => dispatch => {
   axios.post('/auth/local/signup', credentials)
-    .then(res => setUserAndRedirect(res.data, history, dispatch))
+    .then(res => {
+      setUserAndRedirect(res.data, history, dispatch);
+      dispatch(createUser(res.data));
+    })
     .catch(err => console.error(`Signing up with ${credentials.email} and ${credentials.password} was unsuccesful`, err));
 };
 

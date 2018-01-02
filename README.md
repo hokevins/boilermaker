@@ -32,7 +32,40 @@ Use it as an index for other css files that you @import in.
 
 # Authentication & OAuth2.0
 
-Any OAuth external API clientID's & clientSecrets must be updated via `server/auth/keys.js` (which has been added to `.gitignore` for safe-keeping on your local IDE.
+Any OAuth external API clientID's & clientSecrets must be updated via `server/auth/localSecrets.js` (which has been added to `.gitignore` for safe-keeping on your local IDE.
+
+Had to downgrade to pg@6.4.2 in order to avoid OAuth type error.
+(https://github.com/sequelize/sequelize/issues/8005)
+
+----------
+
+# Future to-do's:
+
+-- See workshop:  Environment Variables
+-- `process.env.NODE_ENV === 'development'` inside of `index.js`.
+-- `process.env.GOOGLE_CLIENT_ID = 'etc';`
+-- `process.env.GOOGLE_CLIENT_SECRET = 'etc';`
+And in your app's entry point, `index.js`:
+`require('./localSecrets');` // mutate the process.env object with your variables
+`require('./server');`       // run your app after you're sure the env variables are set.
+
+# TESTING
+See tests folder and already npm installed the following:
+- mocha
+- chai
+- supertest
+- enzyme
+Note that you may need to install an additional dev dependency: react-addons-test-utils or react-test-renderer—based on your current react version. See enzyme's installation details for more. (https://github.com/airbnb/enzyme#installation)
+
+These libraries are the bare minimum we need to get off the ground with your testing. However, here's a list of some other handy libraries that may come in handy:
+
+sinon - provides spies, stubs and mocks
+chai-as-promised - extends chai with assertions specific to promises
+chai-things - extends chai with helpful assertions specific to arrays
+sinon-as-promised - extends sinon with sugar for promises
+chai-enzyme - extends chai with some convenience functions for working with enzyme
+
+N.B: in particular, chai supports a wide ecosystem of extensions. If you find yourself writing verbose code in order to make a particular assertion, take a moment and see if someone's written a plugin that could make your life easier. Here's a full list of them! (http://chaijs.com/plugins/)
 
 ----------
 

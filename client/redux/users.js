@@ -4,13 +4,13 @@ import axios from 'axios';
 
 const INITIALIZE = 'INITIALIZE_USERS';
 const CREATE     = 'CREATE_USER';
-export const REMOVE = 'REMOVE_USER';
+const REMOVE = 'REMOVE_USER';
 const UPDATE     = 'UPDATE_USER';
 
 /* ------------     ACTION CREATORS      ------------------ */
 
 const init  = users => ({ type: INITIALIZE, users });
-const create = user  => ({ type: CREATE, user });
+export const create = user  => ({ type: CREATE, user });
 const remove = id    => ({ type: REMOVE, id });
 const update = user  => ({ type: UPDATE, user });
 
@@ -23,7 +23,7 @@ export default function reducer (users = [], action) {
       return action.users;
 
     case CREATE:
-      return [action.user, ...users];
+      return [...users, action.user];
 
     case REMOVE:
       return users.filter(user => user.id !== action.id);
