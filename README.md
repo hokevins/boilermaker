@@ -50,6 +50,10 @@ See workshop tab:  **Environment Variables**
 `require('./server');`       // run your app after you're sure the env variables are set.
 
 # TESTING
+
+See workshop tab:  **Testing**
+What Makes a Good Test (Express/Sequelize/React/Redux)?
+
 See tests folder and already npm installed the following:
 - mocha
 - chai
