@@ -41,7 +41,7 @@ Had to downgrade to pg@6.4.2 in order to avoid OAuth type error.
 
 # Future to-do's:
 
-- See workshop:  Environment Variables
+See workshop tab:  **Environment Variables**
 - `process.env.NODE_ENV === 'development'` inside of `index.js`.
 - `process.env.GOOGLE_CLIENT_ID = 'etc';`
 - `process.env.GOOGLE_CLIENT_SECRET = 'etc';`
@@ -65,7 +65,7 @@ chai-things - extends chai with helpful assertions specific to arrays
 sinon-as-promised - extends sinon with sugar for promises
 chai-enzyme - extends chai with some convenience functions for working with enzyme
 
-N.B: in particular, chai supports a wide ecosystem of extensions. If you find yourself writing verbose code in order to make a particular assertion, take a moment and see if someone's written a plugin that could make your life easier. Here's a full list of them! (http://chaijs.com/plugins/)
+N.B: in particular, chai supports a wide ecosystem of extensions. If you find yourself writing verbose code in order to make a particular assertion, take a moment and see if someone's written a plugin that could make your life easier. Here's a full list of them. (http://chaijs.com/plugins/)
 
 ----------
 
