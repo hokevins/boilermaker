@@ -41,7 +41,7 @@ Had to downgrade to pg@6.4.2 in order to avoid OAuth type error.
 
 # Future to-do's:
 
-See workshop tab:  **Environment Variables**
+See boilermaker workshop tab:  **Environment Variables**
 - `process.env.NODE_ENV === 'development'` inside of `index.js`.
 - `process.env.GOOGLE_CLIENT_ID = 'etc';`
 - `process.env.GOOGLE_CLIENT_SECRET = 'etc';`
@@ -51,8 +51,10 @@ See workshop tab:  **Environment Variables**
 
 # TESTING
 
-See workshop tab:  **Testing**
-What Makes a Good Test (Express/Sequelize/React/Redux)?
+See boilermaker workshop tab:  **Testing**
+- What Makes a Good Test (Express)?
+- What Makes a Good Test (Sequelize)?
+- What Makes a Good Test (React/Redux)?
 
 See tests folder and already npm installed the following:
 - mocha
