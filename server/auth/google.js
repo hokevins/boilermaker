@@ -9,10 +9,11 @@ const { User } = require('../db/models');
 
 const googleCredentials = {
   // options for the google strategy
-  clientID: require('./localSecrets.js').google.clientID,
-  clientSecret: require('./localSecrets.js').google.clientSecret,
-  // clientID: process.env.GOOGLE_CLIENT_ID,
-  // clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  // clientID: require('./localSecrets.js').google.clientID,
+  // clientSecret: require('./localSecrets.js').google.clientSecret,
+      // OR
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: '/auth/google/callback'
 };
 
