@@ -75,4 +75,4 @@ N.B: In particular, chai supports a wide ecosystem of extensions. If you find yo
 
 ----------
 
-THANKS FOR PLAYING! hadoken.
+THANKS FOR PLAYING! hadoken. 🦆
