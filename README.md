@@ -1,6 +1,8 @@
 # boilermaker
 
-After forking or cloning, don't forget to `npm install`.
+To template, clone this repo into your local machine and create a new repo on github for the new project.  Run `git remote -v` to see the current origin URL.  Then run `git remote set-url https://github.com/newUsername/newRepo.git` (https://help.github.com/articles/changing-a-remote-s-url/).  There is no need to delete the current .gitignore file.  From here, just push as usual onto github since the local MASTER is now connected to a new remote MASTER and start working.  After cloning, don't forget to `npm install`.
+
+Remember to update the `package.json` file with your new project details including the new github address.
 
 If applicable, once you've ensured that `postgres` is running (e.g. by trying to start a `psql` shell), you can execute `npm run seed` to seed the database with fake data (assuming you've populated the seed.js file).
 
