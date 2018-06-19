@@ -53,7 +53,7 @@ class Home extends Component {
 
         <h2>Currently logged in as:  {this.props.currentUser.email || 'guest'}</h2>
 
-        <button onClick={this.props.logout}>LOGOUT</button>
+        <button className="btn-logout" onClick={this.props.logout}>LOGOUT</button>
 
         <form onSubmit={this.onLoginSubmit}>
           <div className="form-group">

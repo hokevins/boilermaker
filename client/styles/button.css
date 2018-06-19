@@ -1,0 +1,44 @@
+.btn-logout {
+  /*
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  */
+  width: 100px;
+  height: 100px;
+  align-self: center;
+  border-radius: 50%;
+  background-color: #000000;
+  color: #FFFFFF;
+
+  -webkit-animation: spin 4s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+/* Do you wonder why we use exactly 992px and 600px? They are what we call "typical breakpoints" for devices. */
+
+@media screen and (max-width: 600px) {
+  .btn-logout {
+    color: #0000FF;
+    background-color: yellow;
+    align-self: flex-end;
+  }
+  .btn-logout:hover {
+    font-weight: bolder;
+    color: lime;
+    -webkit-animation: spin 4s linear 0;
+  }
+}
+
+/* NEVER USE !IMPORTANT */
+/*
+.users-list {
+  color: black !important;
+}
+*/
